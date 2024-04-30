@@ -2,6 +2,9 @@
 using namespace std;
 
 int main(){
+
+    /// For Printing Square Pattern
+
     // for(int i=0;i<4;i++){
     //     cout<< "****" <<endl;
     // }
@@ -9,8 +12,9 @@ int main(){
     int n;
     cout<<"Enter your no : " ;
     cin>>n;
-    int i = 1;
+    int i;
     int digitSum=0;
+
     ///     For Reverse Printing
 
     // for(int i=0;i<n;i++){
@@ -19,13 +23,37 @@ int main(){
 
     ///         For Calculation Of Digits Without Using Arrays
     
-    while(n != 0){
-        i = n%10;
-        digitSum = digitSum + i;
-        n=n/10;
-    }
-    cout<<digitSum<<endl;
+    // while(n != 0){
+    //     i = n%10;
+    //     digitSum += i;
+    //     n=n/10;
+    // }
+    // cout<<digitSum<<endl;
 
-    cout<<endl;
+    // cout<<endl;
+
+    ///         For Calculation Of Digits(Odd) Without Using Arrays
+
+    //  while(n != 0){
+    //     i = n%10;
+    //     if(i%2!=0){
+    //        digitSum += i; 
+    //     }
+    //     n=n/10;
+    // }
+    // cout<<digitSum<<endl;
+
+    ///     Reverse A number And Save It in Another No
+
+    int newNo = 0;
+
+    while (n!=0)
+    {
+        i = n%10;
+        newNo = newNo*10 + i;
+        n = n/10;
+    }
+    
+    cout<<newNo<<endl;
     return 0;
 }
