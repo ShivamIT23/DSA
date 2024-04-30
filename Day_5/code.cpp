@@ -1,7 +1,9 @@
-#include<iostream>
+#include <iostream>
+#include<cmath>
 using namespace std;
 
-int main(){
+int main()
+{
 
     /// For Printing Square Pattern
 
@@ -10,8 +12,8 @@ int main(){
     // }
 
     int n;
-    cout<<"Enter your no : " ;
-    cin>>n;
+    cout << "Enter your no : ";
+    cin >> n;
     // int i;
     // int digitSum=0;
 
@@ -22,7 +24,7 @@ int main(){
     // }
 
     ///         For Calculation Of Digits Without Using Arrays
-    
+
     // while(n != 0){
     //     i = n%10;
     //     digitSum += i;
@@ -37,7 +39,7 @@ int main(){
     //  while(n != 0){
     //     i = n%10;
     //     if(i%2!=0){
-    //        digitSum += i; 
+    //        digitSum += i;
     //     }
     //     n=n/10;
     // }
@@ -53,21 +55,38 @@ int main(){
     //     newNo = newNo*10 + i;
     //     n = n/10;
     // }
-    
+
     // cout<<newNo<<endl;
 
+    ///     Prime No.
 
-    ///     Prime No.   
+    // bool isPrime = true;
+
+    // for (int i = 2; i <= (n / 2); i++)
+    // {
+    //     if (n % i == 0)
+    //     {
+    //         isPrime = false;
+    //         break;
+    //     }
+    // }
+
+    // cout << n << " is " << (isPrime ? "Prime" : "Not Prime") << endl;
+
+
+    ///     Prime No. (For Less Time)
 
     bool isPrime = true;
 
-    for(int i=2;i<(n/2);i++){
-        if(n%i==0){
+    for (int i = 2; i <= sqrt(n); i++)
+    {
+        if (n % i == 0)
+        {
             isPrime = false;
             break;
         }
     }
 
-    cout<<n<< " is "<<(isPrime ? "Prime" : "Not Prime")<<endl;
+    cout << n << " is " << (isPrime ? "Prime" : "Not Prime") << endl;
     return 0;
 }
