@@ -12,8 +12,8 @@ int main(){
     int n;
     cout<<"Enter your no : " ;
     cin>>n;
-    int i;
-    int digitSum=0;
+    // int i;
+    // int digitSum=0;
 
     ///     For Reverse Printing
 
@@ -45,15 +45,29 @@ int main(){
 
     ///     Reverse A number And Save It in Another No
 
-    int newNo = 0;
+    // int newNo = 0;
 
-    while (n!=0)
-    {
-        i = n%10;
-        newNo = newNo*10 + i;
-        n = n/10;
-    }
+    // while (n!=0)
+    // {
+    //     i = n%10;
+    //     newNo = newNo*10 + i;
+    //     n = n/10;
+    // }
     
-    cout<<newNo<<endl;
+    // cout<<newNo<<endl;
+
+
+    ///     Prime No.   
+
+    bool isPrime = true;
+
+    for(int i=2;i<(n/2);i++){
+        if(n%i==0){
+            isPrime = false;
+            break;
+        }
+    }
+
+    cout<<n<< " is "<<(isPrime ? "Prime" : "Not Prime")<<endl;
     return 0;
 }
