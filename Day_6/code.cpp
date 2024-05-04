@@ -74,7 +74,7 @@ int main()
     // }
 
 
-    ////    INverted STAR PYRAMID PATTERN  
+    ////    INverted & Rotated STAR PYRAMID PATTERN  
 
     int st = 4;
     for(int i=0;i<st;i++){
