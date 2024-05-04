@@ -36,7 +36,7 @@ int main()
     //     cout << endl;
     // }
 
-    ////    Half Pyramid Pattern  
+    ////    Half Pyramid Pattern
 
     // for(int i = 0 ; i<n;i++){
     //     for(int j = 0; j<i+1;j++){
@@ -45,7 +45,7 @@ int main()
     // cout<<endl;
     // }
 
-    ////    Character INcrease Pyramid  
+    ////    Character INcrease Pyramid
 
     // char ch = 'A';
     // for(int i = 0 ; i<n;i++){
@@ -73,8 +73,7 @@ int main()
     //     cout<<endl;
     // }
 
-
-    ////    INverted & Rotated STAR PYRAMID PATTERN  
+    ////    INverted & Rotated STAR PYRAMID PATTERN
 
     // int st = 4;
     // for(int i=0;i<st;i++){
@@ -88,7 +87,7 @@ int main()
     //     cout<<endl;
     // }
 
-    //   Floyd's Triangle  
+    //   Floyd's Triangle
 
     // int num = 1;
     // for(int i = 0 ; i<5;i++){
@@ -98,30 +97,67 @@ int main()
     // cout<<endl;
     // }
 
+    // ///     Diamond pattern
 
-    ///     Diamond pattern     
+    // int n =17;
 
-    int n =17;
+    // for(int i=0;i<n;i++){
+    //     for(int j = (n-1) ;j>i;j--){
+    //         cout<<"  ";
+    //     }
+    //     for(int k = 0 ; k<(2*(i+1)-1) ; k++){
+    //         cout<<"* ";
+    //     }
+    //     cout<<endl;
+    // }
 
-    for(int i=0;i<n;i++){
-        for(int j = (n-1) ;j>i;j--){
-            cout<<"  ";
+    // for(int i=0;i<n;i++){
+    //     for(int j = 0 ;j<i;j++){
+    //         cout<<"  ";
+    //     }
+    //     for(int k = (2*n-(2*i+1)) ; k>0 ; k--){
+    //         cout<<"* ";
+    //     }
+    //     cout<<endl;
+    // }
+
+    ////        Butterfly Pattern
+
+    int n = 7;
+
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < (i + 1); j++)
+        {
+            cout << "* ";
         }
-        for(int k = 0 ; k<(2*(i+1)-1) ; k++){
-            cout<<"* ";
+        for (int k = 0; k < (2 * (n - (i + 1))); k++)
+        {
+            cout << "  ";
         }
-        cout<<endl;
+        for (int j = 0; j < (i + 1); j++)
+        {
+            cout << "* ";
+        }
+        cout << endl;
     }
-    
-    for(int i=0;i<n;i++){
-        for(int j = 0 ;j<i;j++){
-            cout<<"  ";
+
+    for (int i = n; i > 0; i--)
+    {
+        for (int j = 0; j < i; j++)
+        {
+            cout << "* ";
         }
-        for(int k = (2*n-(2*i+1)) ; k>0 ; k--){
-            cout<<"* ";
+        for (int k = 0; k < (2 * (n - (i))); k++)
+        {
+            cout << "  ";
         }
-        cout<<endl;
+        for (int j = 0; j < i; j++)
+        {
+            cout << "* ";
+        }
+        cout << endl;
     }
-    
+
     return 0;
 }
