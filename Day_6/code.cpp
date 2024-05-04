@@ -110,9 +110,6 @@ int main()
         for(int k = 0 ; k<(2*(i+1)-1) ; k++){
             cout<<"* ";
         }
-        for(int l= (n-1);l<i;l--){
-            cout<<"  ";
-        }
         cout<<endl;
     }
     
@@ -122,9 +119,6 @@ int main()
         }
         for(int k = (2*n-(2*i+1)) ; k>0 ; k--){
             cout<<"* ";
-        }
-        for(int l= 0;l<i;l++){
-            cout<<"  ";
         }
         cout<<endl;
     }
