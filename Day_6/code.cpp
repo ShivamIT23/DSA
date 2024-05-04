@@ -76,17 +76,58 @@ int main()
 
     ////    INverted & Rotated STAR PYRAMID PATTERN  
 
-    int st = 4;
-    for(int i=0;i<st;i++){
-        for(int j=0;j<st;j++){
-            if(j<st-(i+1)){
-                cout<<" ";
-            }else{
-                cout<<"*";
-            }
+    // int st = 4;
+    // for(int i=0;i<st;i++){
+    //     for(int j=0;j<st;j++){
+    //         if(j<st-(i+1)){
+    //             cout<<" ";
+    //         }else{
+    //             cout<<"*";
+    //         }
+    //     }
+    //     cout<<endl;
+    // }
+
+    //   Floyd's Triangle  
+
+    // int num = 1;
+    // for(int i = 0 ; i<5;i++){
+    //     for(int j = 0; j<=i;j++){
+    //         cout<<num++<<" ";
+    // }
+    // cout<<endl;
+    // }
+
+
+    ///     Diamond pattern     
+
+    int n =17;
+
+    for(int i=0;i<n;i++){
+        for(int j = (n-1) ;j>i;j--){
+            cout<<"  ";
+        }
+        for(int k = 0 ; k<(2*(i+1)-1) ; k++){
+            cout<<"* ";
+        }
+        for(int l= (n-1);l<i;l--){
+            cout<<"  ";
         }
         cout<<endl;
     }
-
+    
+    for(int i=0;i<n;i++){
+        for(int j = 0 ;j<i;j++){
+            cout<<"  ";
+        }
+        for(int k = (2*n-(2*i+1)) ; k>0 ; k--){
+            cout<<"* ";
+        }
+        for(int l= 0;l<i;l++){
+            cout<<"  ";
+        }
+        cout<<endl;
+    }
+    
     return 0;
 }
