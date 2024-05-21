@@ -3,34 +3,50 @@ using namespace std;
 
 void bestBuyAndSell(int *arr, int n)
 {
-    int maxProfit = 0;
-    int buyDay = 1;
-    int sellDay = 1;
-
-    for (int i = 1; i < n; i++)
+    if (n == 0)
     {
-        int currValue = INT16_MAX;
-        int buyIdx = 0;
-        for (int j = 0; j < i; j++)
+        return;
+    }
+    int maxProfit = 0;
+    int buyDay = 0;
+    int sellDay = 0;
+    int currValue = INT16_MAX;
+    int buyIdx = 0;
+
+    // for (int i = 0; i < n; i++)      ////Shivam's Code!!
+    // {
+    //     if (currValue > arr[i])
+    //     {
+    //         currValue = arr[i];
+    //         buyIdx = i;
+    //     }
+    //     int newProfit = arr[i + 1] - currValue;
+    //     if (maxProfit < newProfit)
+    //     {
+    //         maxProfit = newProfit;
+    //         buyDay = buyIdx + 1;
+    //         sellDay = i + 2;
+    //     }
+    // }
+
+    for (int i = 0; i < n; i++)
+    { ////Chatgpt's help!!!!
+        if (arr[i] < currValue)
         {
-            int newVal = arr[j];
-            if (currValue > newVal)
-            {
-                currValue = newVal;
-                buyIdx = j;
-            }
+            currValue = arr[i];
+            buyIdx = i;
         }
-        int newProfit = arr[i] - currValue;
-        if (maxProfit < newProfit)
+        else if (arr[i] - currValue > maxProfit)
         {
-            maxProfit = newProfit;
+            maxProfit = arr[i] - currValue;
             buyDay = buyIdx + 1;
             sellDay = i + 1;
         }
     }
-    cout << "Best Buy Is = " << buyDay<<"\n";
-    cout << "Best Sell Is = " << sellDay<<"\n";
-    cout << "Maximum Profit Is = " << maxProfit<<"\n";
+
+    cout << "Best Buy Is = " << buyDay << "\n";
+    cout << "Best Sell Is = " << sellDay << "\n";
+    cout << "Maximum Profit Is = " << maxProfit << "\n";
 }
 
 int main()
