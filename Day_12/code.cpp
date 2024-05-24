@@ -79,6 +79,22 @@ void CountingSort(int *arr, int m)
     }
 }
 
+void InsertionSortChar(char *arr, int n)
+{
+    for (int i = 1; i < n; i++)
+    {
+        int curr = arr[i];
+        int prev = i - 1;
+        while (prev >= 0 && arr[prev] < curr)
+        {
+            // swap(arr[prev],arr[prev+1]);         //// Shivam's Approach
+            arr[prev + 1] = arr[prev]; //// ChatGpt's Approach
+            prev--;
+        }
+        arr[prev + 1] = curr;
+    }
+}
+
 void DisplayArray(int *arr, int n)
 {
     for (int i = 0; i < n; i++)
@@ -87,17 +103,28 @@ void DisplayArray(int *arr, int n)
     }
 }
 
+void DisplayArrayChar(char *arr, int n)
+{
+    for (int i = 0; i < n; i++)
+    {
+        cout << arr[i] << ",";
+    }
+}
+
 int main()
 {
     int arr[] = {5, 4, 1, 3, 2};
     int arr2[] = {1, 4, 1, 3, 2, 4, 3, 7};
+    char ch[6] = {'f','b','a','e','c','d'};
     int n = sizeof(arr) / sizeof(int);
     int m = sizeof(arr2) / sizeof(int);
     // BubbleSort(arr, n);
     // SelectionSort(arr, n);
     // InsertionSort(arr, n);
     // CountingSort(arr2, m);
-    sort(arr2, arr2 + m, greater<int>());
-    DisplayArray(arr2, m);
+    // sort(arr2, arr2 + m, greater<int>());
+    // DisplayArray(arr2, m);
+    InsertionSortChar(ch , 6);
+    DisplayArrayChar(ch, 6);
     return 0;
 }
