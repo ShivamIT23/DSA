@@ -22,12 +22,18 @@ void SpiralTransverse(int matrix[][4], int n, int m)
         ////Bottom
         for (int j = edCol - 1; j >= stCol; j--)
         {
+            if(stRow == edRow){
+                break;
+            }
             cout << matrix[edRow][j] << " ";
         }
 
         /// lEFT
         for (int i = edRow - 1; i >= stRow + 1; i--)
         {
+            if(stCol == edCol){
+                break;
+            }
             cout << matrix[i][stCol] << " ";
         }
         stRow++, stCol++;
