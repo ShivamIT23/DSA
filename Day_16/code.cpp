@@ -1,5 +1,4 @@
 #include <iostream>
-#include <cmath>
 using namespace std;
 
 void OddOrEven(int n)
@@ -16,11 +15,8 @@ void OddOrEven(int n)
 
 void GetIthBit(int n, int key)
 {
-    int pos = 1;
-    for (int i = 0; i < key; i++)
-    {
-        pos *= 2;
-    }
+    int pos = 1 << key;
+
     if ((n & pos) > 0)
     {
         cout << "1";
@@ -28,6 +24,34 @@ void GetIthBit(int n, int key)
     else
     {
         cout << "0";
+    }
+}
+
+void SetIthBit(int n, int key)
+{
+    int pos = 1 << key;
+
+    n = (n | pos);
+    cout << n << "\n";
+}
+
+void ClearIthBit(int n, int key)
+{
+    int pos = ~(1 << key);
+
+    n = (n & pos);
+    cout << n << "\n";
+}
+
+bool IsPowerOf2(int n)
+{
+    if (!((n) & (n - 1)))
+    {
+        return true;
+    }
+    else
+    {
+        return false;
     }
 }
 
@@ -44,9 +68,14 @@ int main()
     // cout<<(32>>2)<<"\n";
     // cout<<(7>>2)<<"\n"; //1
     // cout<<(7>>3)<<"\n"; //0
-    int n = 8;
-    int i = 3;
+    int n = 7;
+    int i = 2;
     OddOrEven(n);
-    GetIthBit(n, i);
+    // GetIthBit(n, i);
+    // SetIthBit(n, i);
+    // ClearIthBit(n, i);
+    cout << IsPowerOf2(4) << "\n";
+    cout << IsPowerOf2(12) << "\n";
+    cout << IsPowerOf2(16) << "\n";
     return 0;
 }
