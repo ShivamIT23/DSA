@@ -1,44 +1,65 @@
 #include <iostream>
-#include<cmath>
+#include <cmath>
+#define Swap(x, y, z) {z = x; x = y; y = z;}
 using namespace std;
 
-int main(){
+void ArmStrongNumber(int n)
+{
+    int sum = 0;
+    int temp = 0;
+    int num = n;
+    while (num > 0)
+    {
+        temp = num % 10;
+        sum += temp * temp * temp;
+        num = num / 10;
+    }
+    cout << (sum == n ? "Armstrong Number" : "Not Armstrong Number") << "\n";
+}
 
-////  CHECK IF A NUMBER IS POSITIVE , NEGATIVE AND ZERO
+int main()
+{
 
-/* int n;
-cout<< "Enter a number: ";
-cin>>n;
+    ////  CHECK IF A NUMBER IS POSITIVE , NEGATIVE AND ZERO
 
-if(n>0){
-    cout<< "Number is Positive";
-}else if(n<0) {
-    cout<< "Number is Negative";
-}else{
-    cout<< "Number is Zero";
-}  */
+    /* int n;
+    cout<< "Enter a number: ";
+    cin>>n;
 
-////    LEAP YEAR OR NOT
+    if(n>0){
+        cout<< "Number is Positive";
+    }else if(n<0) {
+        cout<< "Number is Negative";
+    }else{
+        cout<< "Number is Zero";
+    }  */
 
-/* int year;
-cout<< "Enter a year: ";
-cin>>year;
+    // ArmStrongNumber(321);
+    int x = 1, y = 2, z = 3;
+    Swap(x, y, z);
+    cout<<x<<" "<<y<<" "<<z<<" "<<"\n";
 
-if(year%4==0){
-    cout<< "Leap Year";
-}else{
-    cout<< "Not a Leap Year";
-} */
+    ////    LEAP YEAR OR NOT
 
-    ////    ARMSTRONG NUMBER    
+    /* int year;
+    cout<< "Enter a year: ";
+    cin>>year;
+
+    if(year%4==0){
+        cout<< "Leap Year";
+    }else{
+        cout<< "Not a Leap Year";
+    } */
+
+    ////    ARMSTRONG NUMBER
 
     /* int n;
     cout << "Enter a number: ";
     cin >> n; */
 
-    ////    ARMSTRONG NUMBER    
+    ////    ARMSTRONG NUMBER
 
-    int n;
+    // int n;
 
     return 0;
 }

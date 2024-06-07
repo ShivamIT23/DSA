@@ -15,9 +15,9 @@ void OddOrEven(int n)
 
 void GetIthBit(int n, int key)
 {
-    int pos = 1 << key;
+    int mask = 1 << key;
 
-    if ((n & pos) > 0)
+    if ((n & mask) > 0)
     {
         cout << "1";
     }
@@ -29,17 +29,17 @@ void GetIthBit(int n, int key)
 
 void SetIthBit(int n, int key)
 {
-    int pos = 1 << key;
+    int mask = 1 << key;
 
-    n = (n | pos);
+    n = (n | mask);
     cout << n << "\n";
 }
 
 void ClearIthBit(int n, int key)
 {
-    int pos = ~(1 << key);
+    int mask = ~(1 << key);
 
-    n = (n & pos);
+    n = (n & mask);
     cout << n << "\n";
 }
 
@@ -55,6 +55,59 @@ bool IsPowerOf2(int n)
     }
 }
 
+void ChangeIthBitWithValue(int n, int key, int val)
+{
+    n = (n & ~(1 << key)) | (val << key);
+    cout << n << "\n";
+}
+
+void ClearIBits(int n, int key)
+{
+
+    ////Shivam's Approach
+
+    // int i =0;
+    // int mask = 0;
+    // while(i<key){
+    //     mask = mask | (1<<i++);
+    // }
+    // n = (n & ~mask);
+
+    ////Correct Way
+    int mask = (~0) << key;
+    n = (n & mask);
+
+    cout << n << "\n";
+}
+
+int CountSetBits(int n)
+{
+    int count = 0;
+    while (n > 0)
+    {
+        count += n & 1;
+        n = n >> 1;
+    }
+    return count;
+}
+
+int FastExponential(int n, int pow)
+{
+    int ans = 1;
+
+    while (pow > 0)
+    {
+        int lastBit = pow & 1;
+        if (lastBit)
+        {
+            ans = ans * n;
+        }
+        n = n * n;
+        pow = pow >> 1;
+    }
+    cout << ans << "\n";
+}
+
 int main()
 {
     // cout<<(3 & 5)<<"\n";
@@ -68,14 +121,20 @@ int main()
     // cout<<(32>>2)<<"\n";
     // cout<<(7>>2)<<"\n"; //1
     // cout<<(7>>3)<<"\n"; //0
-    int n = 7;
+    int n = 32;
     int i = 2;
-    OddOrEven(n);
+    int val = 1;
+    // OddOrEven(n);
     // GetIthBit(n, i);
     // SetIthBit(n, i);
     // ClearIthBit(n, i);
-    cout << IsPowerOf2(4) << "\n";
-    cout << IsPowerOf2(12) << "\n";
-    cout << IsPowerOf2(16) << "\n";
+    // cout << IsPowerOf2(4) << "\n";
+    // cout << IsPowerOf2(12) << "\n";
+    // cout << IsPowerOf2(16) << "\n";
+
+    // ChangeIthBitWithValue(n,i,val);
+    // ClearIBits(n,i);
+    cout << CountSetBits(n) << "\n";
+    FastExponential(3, 5);
     return 0;
 }
