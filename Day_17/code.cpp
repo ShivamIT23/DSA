@@ -52,6 +52,12 @@ class Car {
         this->color = color ;
     }
 
+    Car(Car &ori){
+        cout<<"Hola\n";
+        this->name = ori.name ;
+        this->color = ori.color ;
+    }
+
     void start(){
         cout << "The car is started.\n";
     }
@@ -105,14 +111,16 @@ int main()
     // // cout <<sizeof(s1) << "\n";
 
     // Car c01;
-    // Car c1("Bugati Chiron","red");
+    Car c1("Bugati Chiron","red");
+    Car c2(c1);
+    c1.getName();
     // c01.getName();
-    // c1.getName();
+    c1.getName();
 
-    User user1(111122222);
-    user1.username = "Shivam";
-    user1.setPassword("shivam123");
-    cout<<user1.getPassword()<<"\n";
+    // User user1(111122222);
+    // user1.username = "Shivam";
+    // user1.setPassword("shivam123");
+    // cout<<user1.getPassword()<<"\n";
 
     return 0;
 }
