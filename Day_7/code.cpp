@@ -15,9 +15,19 @@ int FactFunc(int n = 1)
     return fact;
 }
 
+int biCoff(int n,int r){
+    int val1 = FactFunc(n);
+    int val2 = FactFunc(r);
+    int val3 = FactFunc(n-r);
+
+    int res = val1/(val2*val3);
+    return res;
+}
+
 int main()
 {
-    int n = 6;
-    cout << FactFunc(n) << endl;
+    int n = 4;
+    // cout << FactFunc(n) << endl;
+    cout << biCoff(n, 2) << endl;
     return 0;
 }
