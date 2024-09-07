@@ -1,7 +1,6 @@
 #include <iostream>
 using namespace std;
 
-
 ///// SubArrays are small(or equal) continous order following parts of an array
 ///// Subsequence are small(or equal) [not neccesarily(continous)] order following parts of an array
 //// size of an subarray = n*(n+1) /2
@@ -15,11 +14,16 @@ int main()
     {
         for (int j = i; j < n; j++)
         {
+            cout << "{";
             for (int k = i; k <= j; k++)
             {
                 cout << arr[k];
+                if (k != j)
+                {
+                    cout << ",";
+                }
             }
-            cout << ", ";
+            cout << "} , ";
         }
         cout << "\n";
     }
