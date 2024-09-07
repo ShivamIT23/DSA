@@ -3,7 +3,7 @@ using namespace std;
 
 void WaterTrapped(int *height, int n)
 {
-    if (n < 4)
+    if (n < 3)
     {
         return;
     }

@@ -25,7 +25,7 @@ void bestBuyAndSell(int *arr, int n)
     //     {
     //         maxProfit = newProfit;
     //         buyDay = buyIdx + 1;
-    //         sellDay = i + 2;
+    //         sellDay = i + 1;
     //     }
     // }
 
