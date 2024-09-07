@@ -2,8 +2,8 @@
 using namespace std;
 
 
-///// SubArrays are small continous order following parts of an array
-///// Subsequence are small [not neccesarily(continous)] order following parts of an array
+///// SubArrays are small(or equal) continous order following parts of an array
+///// Subsequence are small(or equal) [not neccesarily(continous)] order following parts of an array
 //// size of an subarray = n*(n+1) /2
 
 int main()
