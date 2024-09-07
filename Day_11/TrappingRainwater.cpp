@@ -7,7 +7,7 @@ void WaterTrapped(int *height, int n)
     {
         return;
     }
-    int leftMax[20000], rightMax[2000];
+    int leftMax[20000], rightMax[20000];
     leftMax[0] = height[0];
     rightMax[n - 1] = height[n - 1];
     int water = 0;
